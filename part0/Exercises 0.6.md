@@ -1,6 +1,5 @@
+```mermaid
 sequenceDiagram
-    participant browser
-    participant server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa 
     activate server
@@ -32,3 +31,4 @@ sequenceDiagram
     deactivate server
 
     Note right of browser: Submit form data using JavaScript code with no redirect.
+```
