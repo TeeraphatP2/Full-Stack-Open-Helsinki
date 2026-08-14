@@ -24,12 +24,12 @@ const Part3 = (props) => {
     )
 }
 const Content = (props) => {
-    
+    console.log(props)
     return (
     <div>
-        <Part1 name1={props.parts[0].part1} exercises1={props.parts[0].exercises1}/>
-        <Part2 name2={props.parts[1].part2} exercises2={props.parts[1].exercises2}/>
-        <Part3 name3={props.parts[2].part3} exercises3={props.parts[2].exercises3}/>
+        <Part1 name1={props.part1[0]} exercises1={props.part1[1]}/>
+        <Part2 name2={props.part2[0]} exercises2={props.part2[1]}/>
+        <Part3 name3={props.part3[0]} exercises3={props.part3[1]}/>
     </div>
     )
 }
