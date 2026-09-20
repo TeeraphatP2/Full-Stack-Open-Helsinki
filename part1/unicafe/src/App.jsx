@@ -4,7 +4,26 @@ const Statistics = (props) => {
   const good = props.goodState
   const neutral = props.neutralState
   const bad = props.badState
-  
+
+  const statistics = () => {
+    if((good || neutral || bad) === 0){
+      return(
+          <h3>No feedback given</h3>  
+      )
+    }else {
+      return(
+      <>
+        <p>good {good}</p>
+        <p>neutral {neutral}</p>
+        <p>bad {bad}</p>
+        <p>all {allValue}</p>
+        <p>average {average}</p>
+        <p>positive {positive} %</p>
+      </>
+      )
+    }
+  }
+
   const allValue = good + neutral + bad
   const average = (good - bad) / allValue
   const positive = (good / allValue) * 100
@@ -12,17 +31,12 @@ const Statistics = (props) => {
   return (
     <div>
       <h2>statistics</h2>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {allValue}</p>
-      <p>average {average}</p>
-      <p>positive {positive} %</p>
+      {statistics()}
     </div>
   )
 }
 
-const App = () =>{
+const App = () => {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
