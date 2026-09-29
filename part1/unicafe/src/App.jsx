@@ -4,8 +4,8 @@ const StatisticLine = ({text, value}) => {
   return (
     <>
       <div className="statisticline-wrapper">
-        <p className="statisicReport1">{text}</p>
-        <p className="statisicReport2">{value}</p>
+        <p>{text}</p>
+        <p>{value}</p>
       </div>
     </>
   )
