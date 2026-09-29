@@ -1,8 +1,13 @@
 import {useState} from 'react'
-
+import './css.css'
 const StatisticLine = ({text, value}) => {
   return (
-    <p>{text} {value}</p>
+    <>
+      <div className="statisticline-wrapper">
+        <p className="statisicReport1">{text}</p>
+        <p className="statisicReport2">{value}</p>
+      </div>
+    </>
   )
 }
 
@@ -23,12 +28,14 @@ const Statistics = (props) => {
     }else {
       return(
         <>
-          <StatisticLine text="good" value={good}/>
+          <StatisticLine className="wrapper" text="good" value={good}/>
           <StatisticLine text="neutral" value={neutral}/>
           <StatisticLine text="bad" value={bad}/>
-          <p>allValue {allValue}</p>
-          <p>Average {average}</p>
-          <p>Positive {positive}</p>
+          <div className="statistics">
+            <p>allValue {allValue}</p>
+            <p>Average {average}</p>
+            <p>Positive {positive}</p>
+          </div>
         </>
       )
     }
