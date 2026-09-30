@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './css.css'
+
 const StatisticLine = ({text, value}) => {
   return (
     <>
