@@ -1,8 +1,8 @@
 import {useState} from 'react'
 
-const Button = ({onSetCurrentWord}) => {
+const Button = ({onSetCurrentWord, countAnecdotes}) => {
   const nextAnecdotes = () => {
-    let randomNumber = Math.floor(Math.random() * 8)
+    let randomNumber = Math.floor(Math.random() * countAnecdotes)
     onSetCurrentWord(randomNumber)
   }
   
@@ -26,7 +26,7 @@ const App = () => {
   return (
     <>
       <h1>{anecdotes[selected]}</h1>
-      <Button onSetCurrentWord={setSelected} />
+      <Button onSetCurrentWord={setSelected} countAnecdotes={anecdotes.length}/>
     </>
   )
 }
